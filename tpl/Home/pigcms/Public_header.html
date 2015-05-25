@@ -1,0 +1,89 @@
+<link rel="stylesheet" type="text/css" href="{pigcms::RES}/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="{pigcms::RES}/css/index.css"/>
+<style>
+/*导航*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+    .topNav{border-top: 3px solid rgb(35, 177, 42);border-bottom:2px solid rgba(0,0,0,0.1);position:relative; z-index:0; height: 60px; line-height:60px; border-bottom: 1px solid #BEBEBE; background-color: #FFFFFF; font-family:"宋体","Microsoft YaHei",SimSun; font-size:12px;}
+    .topNav-width{ width:1209px; height:60px; margin:0 auto; border-right:0px solid #BEBEBE;}
+    .topNav h3{ font-weight:normal; font-size:100%; }
+    .topNav dl{ zoom:0; }
+    .topNav .tnLeft{ float:left; height:60px;}
+    .topNav .tnRight{ float:right;}
+    .topNav dd{ float:left; position:relative;  }
+    .topNav dd h3{ float:left;  }
+    .topNav dd h3 a{ display:inline-block; *display:inline; zoom:0; height:14px; line-height:16px; padding:23px 20px; color:#3C3C3C; border-left:0px solid #BEBEBE}
+    .topNav dd h3 a i{ display:inline-block; width:8px; height:5px; margin:0 0 0 5px; overflow:hidden; vertical-align:middle; font-size:12px; line-height:13px; background: url({pigcms::RES}/images/icon.png) 0 -61px no-repeat;}
+
+    .topNav dd h3 a:hover,
+    .topNav dd.on h3 a{ background:#73BF00; color:#3C3C3C; }
+
+    .topNav .welcome{ padding:0 15px; margin:0 0 0 10px; color:#3C3C3C; border-left:0px solid #BEBEBE;}
+    .topNav .welcome a{  color:#3C3C3C;   }
+
+    .topNav dd ul{ display:none; /*默认隐藏*/ position:absolute; width:169px;  top:60px; left:0;  border:1px solid #101010; border-top:0; background:#3C3C3C; -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); border-top:0px solid #101010; padding:5px 0 10px;}
+    .topNav dd ul li{ line-height: 31px; padding:5px 15px 0;}
+    .topNav dd ul li a{ display: block; color: #333;}
+    .topNav dd ul li a:hover{ background:#3C3C3C; color:#333;    }
+    .topNav dd ul li a span{ color:#FF8400; margin-left:5px;   }
+</style>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="{pigcms::RES}/css/ie6.css"/>
+<![endif]-->
+<script type="text/javascript">window.onerror=function(){return true;}</script>
+<script type="text/javascript" src="{pigcms::RES}/js/lang.js"></script>
+<script type="text/javascript" src="{pigcms::RES}/js/config.js"></script>
+<script type="text/javascript" src="{pigcms::RES}/js/jquery.js"></script>
+<script type="text/javascript" src="{pigcms::RES}/js/common.js"></script>
+<script type="text/javascript" src="{pigcms::RES}/js/page.js"></script>
+<script type="text/javascript" src="{pigcms::RES}/js/jquery.lazyload.js"></script>
+<script type="text/javascript">
+GoMobile('');
+var searchid = 5;
+</script>
+</head>
+<body>
+<div class="topNav">
+        <div class="topNav-width clearfix">
+                <dl class="tnLeft">
+                <dd> <a href="/" title="{pigcms::C('site_name')}"><img src="{pigcms::C('site_logo')}" /></a></dd>
+                </dl>
+
+                <dl class="tnRight">
+                <dd class="welcome">
+                     <if condition="$_SESSION[uid]==false">
+                     <dd><h3><a href="{pigcms::U('Index/login')}">登录</a></h3></dd>
+                     <dd><h3><a href="{pigcms::U('Index/login')}">注册</a></h3></dd>
+                     <else/>
+                        您好，<dd><h3><a style="color:#FF5151;" href="/index.php?g=User&m=Index&a=index"><?php echo session('uname');?></a> <span style="color:#5B5B5B">【uid:100{pigcms:$Think.session.uid}】</span></h3></dd> <dd><h3><a href="/index.php?g=System&m=Admin&a=logout" onclick="return confirm('你确认要退出么!');" >退出</a></h3></dd>
+                        </if>
+                    </dd>
+					
+                    <dd>
+                        
+                        <ul>
+                            <li><span class="csq">售前咨询：</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={pigcms::C('site_qq')}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{pigcms::C('site_qq')}:51" alt="我们竭诚为您服务！" title="我们竭诚为您服务！"/></a></li>
+                            <li><span class="csq">合作加盟：</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={pigcms::C('site_qq')}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{pigcms::C('site_qq')}:51" alt="联系我吧！" title="联系我吧！"/></a></li>
+
+                        </ul>
+                    </dd>
+                    <dd><h3><a href="/">首页</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('Home/Index/fc')}&id=0">功能介绍</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('Home/Index/common')}">微信案例</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('User/Index/index')}">管理中心</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('Home/Index/about')}">关于我们</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('Home/Index/price')}">资费说明</a></h3></dd>
+                    <dd><h3><a href="{pigcms::U('Home/Index/help',array('id'=>$vo['id'],'token'=>$vo['token']))}">帮助中心</a></h3></dd>
+                </dl>
+
+        </div>
+    </div>
+    
+
+
+
+
+
+
+   
+</div>

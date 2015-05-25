@@ -1,0 +1,14 @@
+/uploads/*
+/install
+/cms/backup/*
+/cms/cache/*
+/cms/upload/*
+/cms/sessions/*
+/cms/templatesCache/*
+/cms/smarty/cache/*
+/cms/smarty/templates_c/*
+/Conf/logs/Cache/*
+/Conf/logs/Data/*
+/Conf/logs/Logs/*
+/Conf/logs/Temp/*
+/Conf/upload/*

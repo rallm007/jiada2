@@ -14,4 +14,11 @@ function urlGetTpl($action){
 	$url_content = curl_get_tpl($action);
 	return $url_content;
 }
+
+//切换语言
+// function changeLang($lang = '') {
+// 	$url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : action('/');
+// 	redirect($url.'&l='.$lang);
+// }
+
 ?>

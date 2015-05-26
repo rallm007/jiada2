@@ -12,3 +12,4 @@
 /Conf/logs/Logs/*
 /Conf/logs/Temp/*
 /Conf/upload/*
+*.log
